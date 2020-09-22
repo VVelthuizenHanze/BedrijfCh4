@@ -14,16 +14,19 @@ public class Persoon {
     private String naam;
     private String woonplaats;
     private double maandSalaris;
+    private Afdeling afdeling;
 
-    public Persoon(String naam, String woonplaats, double maandSalaris) {
+    public Persoon(String naam, String woonplaats, double maandSalaris, Afdeling afdeling) {
         this.naam = naam;
         this.woonplaats = woonplaats;
         this.maandSalaris = maandSalaris;
+        this.afdeling = afdeling;
+
         this.personeelsNummer = ++aantalPersonen;
     }
 
     public Persoon(String naam) {
-        this(naam, "Onbekend", 0.0);
+        this(naam, "Onbekend", 0.0, new Afdeling());
     }
 
     public Persoon() {

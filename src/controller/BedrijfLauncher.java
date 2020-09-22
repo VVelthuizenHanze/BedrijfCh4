@@ -1,5 +1,6 @@
 package controller;
 
+import model.Afdeling;
 import model.Persoon;
 
 /**
@@ -11,11 +12,11 @@ public class BedrijfLauncher {
 
     public static void main(String[] args) {
         System.out.println(Persoon.aantalPersonen);
-        Persoon baas = new Persoon("Mark", "Den Haag", 10000);
+        Persoon baas = new Persoon("Mark", "Den Haag", 10000, new Afdeling());
         System.out.println(Persoon.aantalPersonen);
         System.out.println(baas.getPersoneelsNummer());
 
-        Persoon medewerker = new Persoon("Caroline", "Delft", 4000);
+        Persoon medewerker = new Persoon("Caroline", "Delft", 4000, new Afdeling());
         System.out.println(Persoon.aantalPersonen);
         System.out.println(medewerker.getPersoneelsNummer());
 
