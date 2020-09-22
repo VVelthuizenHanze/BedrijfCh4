@@ -17,4 +17,12 @@ public class Afdeling {
     public Afdeling() {
         this("Onbekend", "Onbekend");
     }
+
+    public String getAfdelingsNaam() {
+        return afdelingsNaam;
+    }
+
+    public String getAfdelingsPlaats() {
+        return afdelingsPlaats;
+    }
 }

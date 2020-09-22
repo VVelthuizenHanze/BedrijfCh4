@@ -56,4 +56,8 @@ public class Persoon {
     public double getMaandSalaris() {
         return maandSalaris;
     }
+
+    public Afdeling getAfdeling() {
+        return afdeling;
+    }
 }
