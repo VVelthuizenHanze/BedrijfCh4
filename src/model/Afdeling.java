@@ -25,4 +25,9 @@ public class Afdeling {
     public String getAfdelingsPlaats() {
         return afdelingsPlaats;
     }
+
+    @Override
+    public String toString() {
+        return String.format("afdeling %s te %s", afdelingsNaam, afdelingsPlaats);
+    }
 }

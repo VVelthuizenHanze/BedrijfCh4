@@ -6,43 +6,33 @@ package model;
  * Sla de gegevens van werknemers van ons bedrijf op
  */
 public class Persoon {
-    private static double GRENSWAARDE_BONUS = 4500.0;
+    protected static final String DEFAULTWAARDE_NAAM = "Onbekend";
 
     public static int aantalPersonen = 0;
 
     private int personeelsNummer;
     private String naam;
     private String woonplaats;
-    private double maandSalaris;
     private Afdeling afdeling;
 
-    public Persoon(String naam, String woonplaats, double maandSalaris, Afdeling afdeling) {
+    public Persoon(String naam, String woonplaats, Afdeling afdeling) {
         this.naam = naam;
         this.woonplaats = woonplaats;
-        this.maandSalaris = maandSalaris;
         this.afdeling = afdeling;
 
         this.personeelsNummer = ++aantalPersonen;
     }
 
     public Persoon(String naam) {
-        this(naam, "Onbekend", 0.0, new Afdeling());
+        this(naam, "Onbekend", new Afdeling());
     }
 
     public Persoon() {
-        this("Onbekend");
+        this(DEFAULTWAARDE_NAAM);
     }
 
     public double berekenJaarInkomen() {
-        return 12 * maandSalaris;
-    }
-
-    public boolean heeftRechtOpBonus() {
-        return maandSalaris >= GRENSWAARDE_BONUS;
-    }
-
-    public int getPersoneelsNummer() {
-        return personeelsNummer;
+        return 0;
     }
 
     public String getNaam() {
@@ -53,11 +43,14 @@ public class Persoon {
         return woonplaats;
     }
 
-    public double getMaandSalaris() {
-        return maandSalaris;
-    }
-
     public Afdeling getAfdeling() {
         return afdeling;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s woont in %s en werkt op %s", naam, woonplaats, afdeling);
+        // Je zou ook afdeling.toString() kunnen gebruiken om expliciet te maken dat je toString wil gebruiken
+        // nu is dat impliciet.
     }
 }
